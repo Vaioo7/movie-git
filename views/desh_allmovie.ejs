@@ -1,0 +1,40 @@
+<%- include('desh_header') %>
+
+
+<div class="col-sm-12">
+    <div class="card tabs-card">
+        <div class="card-block p-0">
+            <!-- Nav tabs -->
+            <!-- Tab panes -->
+            <div class="tab-content card-block">
+                <div class="tab-pane active">   
+                    <div class="table-responsive">
+                        <table class="table text-center">
+                            <tr>
+                                <th class="text-center">poster</th>
+                                <th class="text-center">movie name</th>
+                                <th class="text-center">your name</th>
+                                <th class="text-center">seat booked</th>
+                                <th class="text-center">price</th>
+                            </tr>
+                            <% for(var m of record) { %>
+                            <tr>
+                                <td><img src="<%= m.movie.avatar.url %>" height="50px" width="50px" alt="prod img" class="img-fluid"></td>
+                                <td><%= m.movie.name %></td>
+                                <td><%= m.user.name %></td>
+                                <td><%= m.seat %></td>
+                                <td><%= m.price %></td>
+                            </tr>
+                            <% } %>
+                        </table>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('desh_footer') %>

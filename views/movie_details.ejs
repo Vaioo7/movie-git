@@ -1,0 +1,68 @@
+<%- include('header') %>
+
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="/"><i class="fa fa-home"></i> Home</a>
+                        <a href="./categories.html">Categories</a>
+                        <span>Romance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Anime Section Begin -->
+    <section class="anime-details spad">
+        <div class="container">
+            <div class="anime__details__content">
+                <div class="row">
+                    <div class="col-lg-3">
+					    <img src="<%= record.avatar.url %>">
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="anime__details__text">
+                            <div class="anime__details__title">
+                                <h3><%= record.name %></h3>
+                            </div>
+                            <div class="anime__details__rating">
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                </div>
+                                <span><%= record.rating %> / 10</span>
+                            </div>
+                            <br>
+                            <p><%= record.description %></p>
+                            <div class="anime__details__widget">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <ul>
+                                            <li><span>language:</span><%= record.language %></li>
+                                            <li><span>length:</span><%= record.length %></li>
+                                            <li><span>category:</span><%= record.category %></li>
+                                            <li><span>country:</span><%= record.country %></li>
+                                            <li><span>on cinema:</span><%= record.release_date %></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="anime__details__btn">
+                                <a href="/ticketbooking/<%= record.id %>" class="watch-btn"><span>Watch Now</span> <i
+                                    class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Anime Section End -->
+
+        <!-- Footer Section Begin -->
+<%- include('footer') %>
