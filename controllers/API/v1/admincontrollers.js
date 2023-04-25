@@ -78,6 +78,12 @@ module.exports.bookedmovie = async (req, res) => {
 //------------------------------------------------------------- register
 
 exports.register = catchAsyncErrors(async (req, res) => {
+    
+    const existingToken = req.cookies.token;
+    if (existingToken) {
+        console.log('User already has an active session.');
+        return res.redirect('/');
+    }
     return res.render('register')
 })
 
@@ -96,6 +102,11 @@ exports.registerpost = catchAsyncErrors(async (req, res, next) => {
 //------------------------------------------------------------- login
 
 exports.login = catchAsyncErrors(async (req, res, next) => {
+    const existingToken = req.cookies.token;
+    if (existingToken) {
+        console.log('User already has an active session.');
+        return res.redirect('/');
+    }
     return res.render('login')
 });
 
